@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tilestyle - Tokyo street style</title>
+  <!-- CSS担当者へ：ここにCSSファイルを読み込んでください -->
+  <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+
+  <!-- ===============================
+       ヘッダー
+  =============================== -->
+  <header class="l-header">
+    <div class="l-header__inner">
+      <h1 class="c-logo">tilestyle</h1>
+    </div>
+  </header>
+
+  <!-- ===============================
+       メインコンテンツ
+  =============================== -->
+  <main class="l-main">
+    
+    <!-- イントロダクション部分 -->
+    <section class="p-intro">
+      <div class="p-intro__inner">
+        <h2 class="p-intro__title">Text</h2>
+        <p class="p-intro__text">~~~<br>~~~<br>~~~</p>
+        <p class="p-intro__highlight">TEXT!!</p>
+        <!-- 左下の四角い装飾などはCSSの疑似要素(::before, ::after)で作る想定で、HTMLはシンプルにしています -->
+      </div>
+    </section>
+
+    <!-- マップエリア -->
+    <section class="p-map-area">
+      <div class="p-map-area__inner">
+        <!-- 実際のGoogle Mapsのiframeや画像が入る想定 -->
+        <div class="p-map-area__content">
+          <p>map</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- タイル一覧（ギャラリー） -->
+    <section class="p-gallery">
+      <div class="p-gallery__inner">
+        <ul class="p-gallery__list">
+          <!-- 各タイル（詳細ページへのリンク） -->
+          <li class="p-gallery__item">
+            <a href="detail.html" class="p-gallery__link">
+              <img src="dummy-tile1.jpg" alt="タイルの写真1" class="p-gallery__img">
+            </a>
+          </li>
+          <li class="p-gallery__item">
+            <a href="detail.html" class="p-gallery__link">
+              <img src="dummy-tile2.jpg" alt="タイルの写真2" class="p-gallery__img">
+            </a>
+          </li>
+          <li class="p-gallery__item">
+            <a href="detail.html" class="p-gallery__link">
+              <img src="dummy-tile3.jpg" alt="タイルの写真3" class="p-gallery__img">
+            </a>
+          </li>
+          <li class="p-gallery__item">
+            <a href="detail.html" class="p-gallery__link">
+              <img src="dummy-tile4.jpg" alt="タイルの写真4" class="p-gallery__img">
+            </a>
+          </li>
+          <li class="p-gallery__item">
+            <a href="detail.html" class="p-gallery__link">
+              <img src="dummy-tile5.jpg" alt="タイルの写真5" class="p-gallery__img">
+            </a>
+          </li>
+          <li class="p-gallery__item">
+            <a href="detail.html" class="p-gallery__link">
+              <img src="dummy-tile6.jpg" alt="タイルの写真6" class="p-gallery__img">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===============================
+       フッター
+  =============================== -->
+  <footer class="l-footer">
+    <div class="l-footer__inner">
+      <small class="c-copyright">&copy; GroupA2026. All Rights Reserved.</small>
+    </div>
+  </footer>
+
+</body>
+</html>
