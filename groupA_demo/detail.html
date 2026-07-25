@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>タイル詳細 - tilestyle</title>
+</head>
+<body>
+
+  <header class="l-header">
+    <div class="l-header__inner">
+      <p class="c-logo">tilestyle</p>
+    </div>
+  </header>
+
+  <main class="l-main">
+    
+    <!-- ===============================
+         タイル基本情報エリア
+    =============================== -->
+    <section class="p-tile-hero">
+      <div class="p-tile-hero__inner">
+        <!-- メインビジュアル -->
+        <div class="p-tile-hero__visual">
+          <img src="main-tile.jpg" alt="メインタイルの写真" class="p-tile-hero__img">
+        </div>
+        <!-- タイル情報 -->
+        <div class="p-tile-hero__info">
+          <ul class="p-tile-hero__list">
+            <li>Color: <span class="p-tile-hero__value">Red</span></li>
+            <li>Shape: <span class="p-tile-hero__value">Square</span></li>
+            <li>Size: <span class="p-tile-hero__value">15x15</span></li>
+            <li>Location: <span class="p-tile-hero__value">Shibuya</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 戻るボタン -->
+    <div class="p-back-nav">
+      <a href="index.html" class="c-btn-back">◀ Back</a>
+    </div>
+
+    <!-- ===============================
+         道と周辺の写真エリア
+    =============================== -->
+    <section class="p-road-section">
+      <div class="p-road-section__inner">
+        
+        <!-- 中央の道と足跡（CSS/JSで表現しやすいようにコンテナを用意） -->
+        <div class="p-road-line">
+          <div class="p-road-line__footprints js-footprints">
+            <!-- JSで足跡要素を追加、またはCSSアニメーションで表示させる想定 -->
+          </div>
+        </div>
+
+        <!-- 道の脇の写真リスト -->
+        <ul class="p-road-items">
+          <!-- 左側のアイテム -->
+          <li class="p-road-item p-road-item--left">
+            <!-- data-modal-target属性にポップアップのIDを指定 -->
+            <button class="p-road-item__trigger js-modal-open" data-modal-target="modal-01">
+              <img src="spot1.jpg" alt="周辺のお店" class="p-road-item__img">
+            </button>
+          </li>
+          
+          <!-- 右側のアイテム -->
+          <li class="p-road-item p-road-item--right">
+            <button class="p-road-item__trigger js-modal-open" data-modal-target="modal-02">
+              <img src="spot2.jpg" alt="周辺のオブジェ" class="p-road-item__img">
+            </button>
+          </li>
+
+          <!-- 左側のアイテム -->
+          <li class="p-road-item p-road-item--left">
+            <button class="p-road-item__trigger js-modal-open" data-modal-target="modal-03">
+              <img src="spot3.jpg" alt="街並み" class="p-road-item__img">
+            </button>
+          </li>
+
+          <!-- 右側のアイテム -->
+          <li class="p-road-item p-road-item--right">
+            <button class="p-road-item__trigger js-modal-open" data-modal-target="modal-04">
+              <img src="spot4.jpg" alt="周辺のお店" class="p-road-item__img">
+            </button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="l-footer">
+    <div class="l-footer__inner">
+      <small class="c-copyright">&copy; GroupA2026. All Rights Reserved.</small>
+    </div>
+  </footer>
+
+  <!-- ===============================
+       ポップアップ（モーダル）群
+       ※通常は画面に非表示にしておき、クリックで表示させます
+  =============================== -->
+  <!-- モーダル 01 -->
+  <div class="c-modal" id="modal-01">
+    <div class="c-modal__overlay js-modal-close"></div> <!-- 背景の黒半透明 -->
+    <div class="c-modal__content">
+      <h3 class="c-modal__title">Title</h3>
+      <div class="c-modal__body">
+        <img src="spot1.jpg" alt="スポット写真" class="c-modal__img">
+        <p class="c-modal__text">~~~<br>text<br>~~~</p>
+      </div>
+      <button class="c-modal__close-btn js-modal-close">×</button>
+    </div>
+  </div>
+
+  <!-- 必要に応じて modal-02, modal-03... と増やします -->
+
+</body>
+</html>
