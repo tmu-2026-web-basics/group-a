@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>タイル詳細 - tilestyle</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts (Roboto Mono) の読み込み -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <body class="page-detail-1">
+  <header class="l-header">
+    <div class="l-header__inner">
+      <p class="c-logo"><a href="index.html"><span class="c-logo__tile">tile</span>style</a></p>
+    </div>
+  </header>
+
+  <main class="l-main">
+    
+    <!-- ===============================
+         タイル基本情報エリア
+    =============================== -->
+    <section class="p-tile-hero">
+      <div class="p-tile-hero__inner">
+        <!-- メインビジュアル -->
+        <div class="p-tile-hero__visual">
+          <img src="images/detail_1_1/street1.tile.jpg" alt="メインタイルの写真" class="p-tile-hero__img">
+        </div>
+        <!-- タイル情報 -->
+        <div class="p-tile-hero__info">
+          <ul class="p-tile-hero__list">
+            <li>Color: <span class="p-tile-hero__value">赤みがかったグレー</span></li>
+            <li>Shape: <span class="p-tile-hero__value">多角形</span></li>
+            <li>Size: <span class="p-tile-hero__value">10〜40</span></li>
+            <li>Location: <span class="p-tile-hero__value">堀切</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 戻るボタン -->
+    <div class="p-back-nav">
+      <a href="index.html" class="c-btn-back">◀ TOPに戻る</a>
+    </div>
+
+    <!-- ===============================
+         道と周辺の写真エリア
+    =============================== -->
+    <section class="p-road-section">
+      <div class="p-road-section__inner">
+        
+        <!-- 中央の道と足跡（CSS/JSで表現しやすいようにコンテナを用意） -->
+        <div class="p-road-line">
+          <div class="p-road-line__footprints js-footprints">
+    <img src="images/footage.png" alt="足跡" class="js-footprints p-footprint-item">
+    <img src="images/footage.png" alt="足跡" class="js-footprints p-footprint-item">
+    <img src="images/footage.png" alt="足跡" class="js-footprints p-footprint-item">
+    <img src="images/footage.png" alt="足跡" class="js-footprints p-footprint-item">
+    <img src="images/footage.png" alt="足跡" class="js-footprints p-footprint-item">
+    <img src="images/footage.png" alt="足跡" class="js-footprints p-footprint-item">
+    <img src="images/footage.png" alt="足跡" class="js-footprints p-footprint-item">
+    <img src="images/footage.png" alt="足跡" class="js-footprints p-footprint-item">
+
+            <!-- JSで足跡要素を追加、またはCSSアニメーションで表示させる想定 -->
+          </div>
+        </div>
+
+        <!-- 道の脇の写真リスト -->
+        <ul class="p-road-items">
+          <!-- 左側のアイテム -->
+          <li class="p-road-item p-road-item--left">
+            <!-- data-modal-target属性にポップアップのIDを指定 -->
+            <button class="p-road-item__trigger js-modal-open" data-title="ポール" data-text="タイルの道の何箇所かに設置されているポール。ポールには菖蒲の花とその名前が載ったタイルが嵌められている。" data-modal-target="modal-01">
+              <img src="images/detail_1_1/photo_1_5.jpeg" alt="周辺のお店" class="p-road-item__img">
+            </button>
+          </li>
+          
+          <!-- 右側のアイテム -->
+          <li class="p-road-item p-road-item--right">
+            <button class="p-road-item__trigger js-modal-open" data-title="涼し" data-text="タイルの左右は緑が生い茂っている。夏には水が流れる場所もあり、とても涼しく過ごせる空間。" data-modal-target="modal-02">
+              <img src="images/detail_1_1/photo_1_2.jpeg" alt="周辺のオブジェ" class="p-road-item__img">
+            </button>
+          </li>
+
+          <!-- 左側のアイテム -->
+          <li class="p-road-item p-road-item--left">
+            <button class="p-road-item__trigger js-modal-open" data-title="紫陽花" data-text="梅雨の頃になると道沿いに植えられたたくさんの紫陽花が見頃を迎える。" data-modal-target="modal-03">
+              <img src="images/detail_1_1/photo_1_4.jpeg" alt="街並み" class="p-road-item__img">
+            </button>
+          </li>
+
+          <!-- 右側のアイテム -->
+          <li class="p-road-item p-road-item--right">
+            <button class="p-road-item__trigger js-modal-open" data-title="木" data-text="大きな木が目印となっている広場。ちょっとした集合場所や休憩に最適。" data-modal-target="modal-04">
+              <img src="images/detail_1_1/photo_1_6.jpeg" alt="周辺のお店" class="p-road-item__img">
+            </button>
+          </li>
+
+          <!-- 左側のアイテム -->
+          <li class="p-road-item p-road-item--left">
+            <button class="p-road-item__trigger js-modal-open" data-title="菖蒲園" data-text="五月から六月ごろに菖蒲の花が見頃を迎える堀切菖蒲園。様々な品種の菖蒲は圧巻の美しさ。" data-modal-target="modal-03">
+              <img src="images/detail_1_1/photo_1_1.jpeg" alt="街並み" class="p-road-item__img">
+            </button>
+          </li>
+
+          <!-- 右側のアイテム -->
+          <li class="p-road-item p-road-item--right">
+            <button class="p-road-item__trigger js-modal-open" data-title="神路の誉" data-text="おすすめの品種の神路の誉。深い紫が凛とした上品さを漂わせている美しい品種" data-modal-target="modal-04">
+              <img src="images/detail_1_1/photo_1_3.jpeg" alt="周辺のお店" class="p-road-item__img">
+            </button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <section class="p-gallery">
+    <div class="p-gallery__inner">
+      <ul class="p-gallery__list">
+        <li class="p-gallery__item">
+          <a href="detail1.html" class="p-gallery__link">
+            <img src="images/detail_1_1/street1.tile.jpg" alt="タイルの写真1" class="p-gallery__img">
+          </a>
+        </li>
+        <li class="p-gallery__item">
+          <a href="detail2.html" class="p-gallery__link">
+            <img src="images/detail_2_2/street2.tile.jpg" alt="タイルの写真2" class="p-gallery__img">
+          </a>
+        </li>
+        <li class="p-gallery__item">
+          <a href="detail3.html" class="p-gallery__link">
+            <img src="images/detail_3_1/street3.tile.jpg" alt="タイルの写真3" class="p-gallery__img">
+          </a>
+        </li>
+        <li class="p-gallery__item">
+          <a href="detail4.html" class="p-gallery__link">
+            <img src="images/detail_4_2/street4.tile.jpg" alt="タイルの写真4" class="p-gallery__img">
+          </a>
+        </li>
+        <li class="p-gallery__item">
+          <a href="detail5.html" class="p-gallery__link">
+            <img src="images/detail_5_1/street5.tile.png" alt="タイルの写真5" class="p-gallery__img">
+          </a>
+        </li>
+        <li class="p-gallery__item">
+          <a href="detail6.html" class="p-gallery__link">
+            <img src="images/detail_6_2/street6.tile.png" alt="タイルの写真6" class="p-gallery__img">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="p-back-nav p-back-nav--bottom">
+    <a href="index.html" class="c-btn-back">◀ TOPに戻る</a>
+  </div>
+
+  <footer class="l-footer">
+    <div class="l-footer__inner">
+      <small class="c-copyright">&copy; GroupA2026. All Rights Reserved.</small>
+    </div>
+  </footer>
+
+  <!-- ===============================
+       ポップアップ（モーダル）群
+       ※通常は画面に非表示にしておき、クリックで表示させます
+  =============================== -->
+  <!-- モーダル 01 -->
+  <div class="c-modal" id="modal-01">
+    <div class="c-modal__overlay js-modal-close"></div> <!-- 背景の黒半透明 -->
+    <div class="c-modal__content">
+      <h3 class="c-modal__title">ポール</h3>
+      <div class="c-modal__body">
+        <img src="images/detail_1_1/photo_1_5.jpeg" alt="ポール" class="c-modal__img">
+        <p class="c-modal__text">タイルの道の何箇所かに設置されているポール。<br>ポールには菖蒲の花とその名前が載ったタイルが嵌められている。</p>
+      </div>
+      <button class="c-modal__close-btn js-modal-close">×</button>
+    </div>
+  </div>
+
+  <!-- 必要に応じて modal-02, modal-03... と増やします -->
+   
+<!-- トップに戻るボタン -->
+<a href="#" class="c-pagetop" id="js-pagetop" aria-label="ページトップへ戻る">
+  ↑
+</a>
+<script src="script.js"></script>
+</body>
+</html>

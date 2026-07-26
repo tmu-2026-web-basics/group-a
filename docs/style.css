@@ -1,0 +1,822 @@
+@charset "UTF-8";
+
+/* ==========================================
+   Base / Reset
+========================================== */
+
+/* サイト全体のフォントを画像風の等幅フォントに変更 */
+body {
+  font-family: 'Roboto Mono', Consolas, 'Courier New', Courier, monospace;
+}
+
+/* ボタンや入力欄など、デフォルトでフォントが固定されがちな要素にも適用 */
+button, input, textarea, select {
+  font-family: inherit;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "MS PMincho", serif;
+  color: #555555;
+  background-color: #ffffff;
+  line-height: 1.8;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==========================================
+   Header（ヘッダー・タイトル部分）
+========================================== */
+.l-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 15px 0 25px;
+  text-align: center;
+  /* 上から下への柔らかなグラデーション背景 */
+  background: linear-gradient(to bottom, rgb(253,251,247,0.98)0%, rgb(242,237,231,0.95) 70%, rgba(242, 237, 231, 0) 100%);
+backdrop-filter: blur(4px);
+}
+
+.l-header__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-logo {
+  font-size: 59px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: #9c7a65; /* 文字のブラウン色 */
+}
+
+/* ==========================================
+   Intro Section（イントロ・枠線と装飾）
+========================================== */
+.p-intro {
+  padding: 40px 20px 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.p-intro__inner {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  padding: 60px 20px;
+  border: 1px solid #8c9083; /* 外枠の緑みがかったグレー線 */
+  text-align: center;
+}
+
+.p-intro__text {
+  font-size: 15px;
+  line-height: 2.2;
+  letter-spacing: 0.08em;
+  color: #333333;
+}
+
+/* 左下の四角形フレーム（疑似要素で作成） */
+.p-intro__inner::before,
+.p-intro__inner::after {
+  content: "";
+  position: absolute;
+  border: 1px solid #8c9083;
+  background-color: #ffffff;
+}
+
+/* 左下の四角形1（小） */
+.p-intro__inner::before {
+  width: 32px;
+  height: 32px;
+  left: -16px;
+  bottom: 12px;
+  z-index: 1;
+}
+
+/* 左下の四角形2（大） */
+.p-intro__inner::after {
+  width: 32px;
+  height: 32px;
+  left: 12px;
+  bottom: -16px;
+  z-index: 1;
+}
+/* ==========================================
+   イントロダクション（説明文）のフォント指定
+========================================== */
+.p-intro__text,
+.p-intro__highlight {
+  font-family: "Shippori Mincho", "Yu Mincho", "游明朝", "Hiragino Mincho ProN", serif; /* 明朝体に変更 */
+  text-align: center;         /* 中央揃え */
+  line-height: 2.2;           /* 行間をゆったり空ける */
+  letter-spacing: 0.1em;      /* 文字間隔を少し広げて上品にする */
+  color: #333333;             /* 文字色（お好みで調整してください） */
+}
+
+/* 「足元に広がる芸術...」などの強調テキストの微調整 */
+.p-intro__highlight {
+  font-size: 1.05rem;         /* 少し大きめにしたい場合 */
+  margin-top: 1.5em;          /* 上の文との間隔 */
+}
+/* ロゴ（タイトル）のフォント指定 */
+.c-logo {
+  font-family: 'Roboto Mono', monospace; /* ★タイトルだけ英字フォントにする */
+  text-align: center;
+  margin: 20px 0;
+}
+
+
+/* ==========================================
+   ロゴ（タイトル）の色分けスタイル
+========================================== */
+.c-logo {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* 「style」部分（薄い茶色）と下線消し */
+.c-logo a {
+  text-decoration: none;
+  color: #a49187; 
+}
+
+/* 「tile」部分（濃い茶色） */
+.c-logo__tile {
+  color: #61412e; 
+}
+
+/* ==========================================
+   Map Area（マップエリア）
+========================================== */
+.p-map-area {
+  padding: 20px 20px 60px;
+}
+
+.p-map-area__inner {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.p-map-area__content {
+  border: 1px solid #b89c88; /* マップを囲むブラウンの細線 */
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p-map-area__content img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================
+   Gallery Section（ギャラリーエリア）
+========================================== */
+.p-gallery {
+  padding: 40px 40px 80px;
+}
+
+.p-gallery__inner {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.p-gallery__list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3列で並べる */
+  gap: 45px; /* 画像同士の余白 */
+}
+
+.p-gallery__item {
+  width: 100%;
+}
+
+.p-gallery__link {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* 正方形に固定 */
+  overflow: hidden;
+  background-color: transparent; /* ダミー画像用背景 */
+  text-decoration: none;
+}
+
+.p-gallery__link img {
+  width: 70%;
+  height: 70%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.p-gallery__link:hover img {
+  transform: scale(1.15);
+  opacity: 0.85;
+}
+
+/* ==========================================
+   Footer（フッター）
+========================================== */
+.l-footer {
+  padding: 30px 0;
+  text-align: center;
+}
+
+.c-copyright {
+  font-size: 12px;
+  color: #888888;
+}
+
+/* ==========================================
+   Base / Reset
+========================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "MS PMincho", serif;
+  color: #333333;
+  background-color: #ffffff;
+  line-height: 1.8;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* ==========================================
+   Header
+========================================== */
+.l-header {
+  position: relative;
+  padding: 40px 0 30px;
+  text-align: center;
+  background: linear-gradient(to bottom, #eae2d7 0%, #f4efe9 50%, rgba(255, 255, 255, 0) 100%);
+}
+
+.l-header__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ==========================================
+   Top Page - Intro Section
+========================================== */
+.p-intro {
+  padding: 40px 20px 80px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 100px;
+}
+
+.p-intro__inner {
+  position: relative;
+  width: 100%;
+  max-width: 1300px;
+  padding: 60px 20px;
+  border: 1px solid #8c9083;
+  text-align: center;
+}
+
+.p-intro__text {
+  font-size: 30px;
+  line-height: 2.2;
+  letter-spacing: 0.08em;
+}
+
+.p-intro__inner::before,
+.p-intro__inner::after {
+  content: "";
+  position: absolute;
+  border: 1px solid #8c9083;
+  background-color: #ffffff;
+}
+
+.p-intro__inner::before {
+  width: 32px;
+  height: 32px;
+  left: -16px;
+  bottom: 12px;
+  z-index: 1;
+}
+
+.p-intro__inner::after {
+  width: 32px;
+  height: 32px;
+  left: 12px;
+  bottom: -16px;
+  z-index: 1;
+}
+
+/* Map & Gallery */
+.p-map-area, .p-gallery {
+  padding: 20px 20px 80px;
+  padding-bottom: 150px;
+}
+
+.p-map-area__inner, .p-gallery__inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.p-map-area__content {
+  border: 1px solid #b89c88;
+  padding: 10px;
+}
+/* ==========================================
+   Detail Page - Hero Section (タイル情報)
+========================================== */
+.p-tile-hero {
+  padding: 40px 20px 20px;
+  padding-bottom: 80px;
+}
+
+.p-tile-hero__inner {
+  width: 100%;
+  max-width: 900px; /* 全体のベース幅 */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15%;          /* 画面に応じて間隔が伸縮 */
+}
+
+.p-tile-hero__visual {
+  width: 40%;       /* 親要素に対して常に45%の幅 */
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+  background-color: #e0e0e0;
+}
+
+.p-tile-hero__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-tile-hero__list {
+  list-style: none;
+  font-family: monospace, monospace;
+  font-size: clamp(14px, 2vw, 18px);
+  line-height: 1.8;
+}
+
+.p-tile-hero__value {
+  margin-left: 0.5em;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.p-tile-hero__info {
+  font-size: 35px;       /* 全体の文字サイズを大きく（お好みで調整） */
+  line-height: 2.0;      /* 行間をゆったり開ける */
+}
+
+/* 各項目の文字サイズ（個別調整したい場合） */
+.p-tile-hero__list li {
+  font-size: 35px;       /* リスト全体の文字サイズ */
+  margin-bottom: 12px;   /* 項目ごとのすき間 */
+}
+
+/* 戻るボタン */
+.p-back-nav {
+  text-align: left;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 20px;
+  padding: 0 20px;
+  padding-left: 20px;
+}
+
+.c-btn-back {
+  font-size: 28px;
+  color: #333333;
+  display: inline-block;
+  transition: opacity 0.2s;
+  font-weight: bold;
+}
+
+.c-btn-back:hover {
+  opacity: 0.6;
+}
+
+/* ==========================================
+   Detail Page - Road Section (中央の道と散策写真)
+========================================== */
+.p-road-section {
+  padding: 0 20px 80px;
+}
+
+.p-road-section__inner {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* 中央道路の共通スタイル */
+.p-road-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20vw; /* 道路の幅（必要に応じて調整） */
+  height: 100%;
+  background-repeat: repeat-y; /* 縦方向に繰り返す */
+  background-position: center top;
+  background-size: contain; /* または cover で調整 */
+  z-index: 0; /* 写真より奥に表示 */
+}
+/* detail1.html (ページクラス: page-detail-1) */
+.page-detail-1 .p-road-line {
+  background-image: url("images/detail_1_1/street1.tile.jpg"); /* 実際のご自身の画像パスに書き換えてください */
+}
+
+/* detail2.html (ページクラス: page-detail-2) */
+.page-detail-2 .p-road-line {
+  background-image: url("images/detail_2_2/street2.tile.jpg"); /* 2ページ目の画像 */
+}
+
+/* detail3.html (ページクラス: page-detail-3) */
+.page-detail-3 .p-road-line {
+  background-image: url("images/detail_3_1/street3.tile.jpg"); /* 3ページ目の画像 */
+}
+
+/* detail4.html以降も同様に記述を追加します */
+.page-detail-4 .p-road-line {
+  background-image: url("images/detail_4_2/street4.tile.jpg"); /* 4ページ目の画像 */
+}
+
+.page-detail-5 .p-road-line {
+  background-image: url("images/detail_5_1/street5.tile.png"); /* 5ページ目の画像 */
+}
+
+.page-detail-6 .p-road-line {
+  background-image: url("images/detail_6_2/street6.tile.png"); /* 6ページ目の画像 */
+}
+
+/* 写真のリスト構造 */
+.p-road-items {
+  list-style: none;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 6vw;
+  padding-top: 30px;
+}
+
+.p-road-item {
+  display: flex;
+  width: 100%;
+  margin-bottom: 120px;
+}
+
+/* 左側の写真配置 */
+.p-road-item--left {
+  justify-content: flex-start;
+  padding-left: 10%;
+}
+
+/* 右側の写真配置 */
+.p-road-item--right {
+  justify-content: flex-end;
+  padding-right: 10%;
+}
+
+.p-road-item__trigger {
+  width: 17vw;        /* コンテナ幅に対して常に32%の正方形 */
+  aspect-ratio: 1 / 1;
+  background-color: #e0e0e0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.p-road-item__trigger:hover {
+  transform: scale(1.03);
+}
+
+.p-road-item__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* ==========================================
+   Footer
+========================================== */
+.l-footer {
+  padding: 30px 0;
+  text-align: center;
+}
+
+.c-copyright {
+  font-size: 12px;
+  color: #888888;
+}
+
+/* ==========================================
+   Modal (ポップアップ)
+========================================== */
+.c-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-modal.is-active {
+  display: flex;
+}
+
+.c-modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* ポップアップの白い枠 */
+.c-modal__content {
+  position: relative;
+  z-index: 1001;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px; /* ポップアップ全体の横幅 */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* タイトルを中央揃え */
+.c-modal__title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* ★ 画像とテキストを左右横並びにする設定 ★ */
+.c-modal__body {
+  display: flex;
+  align-items: center;  /* 上下中央揃え */
+  justify-content: center;
+  gap: 30px;            /* 画像とテキストの間隔 */
+}
+
+/* 左側の画像サイズ */
+.c-modal__body img {
+  width: 45%;           /* 横幅の割合 */
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* 右側のテキスト */
+.c-modal__text {
+  width: 50%;           /* 横幅の割合 */
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;   /* テキストの中央揃え（左揃えにしたい場合は left に変更） */
+}
+
+/* 閉じるボタン */
+.c-modal__close-btn {
+  display: block;
+  margin: 25px auto 0;
+  padding: 8px 24px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* スクロールアニメーション用の設定（ベース） */
+.p-road-item,
+.js-footprints {
+  opacity: 0;
+  transform: scale(0.8) translateY(20px); /* 最初は少し小さく、下がっている */
+  transition: opacity 0.6s ease, transform 0.6s ease; /* 少し速めの動き */
+}
+
+/* 画面内に入ったら表示されるクラス（ペタっとつく動き） */
+.is-show {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+/* JSで is-active が付いたら表示する */
+.js-footprint.is-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ==========================================
+   中央の道路上の足跡配置
+========================================== */
+/* 足跡を束ねる中央ライン */
+.p-road-line__footprints {
+  display: flex;
+  flex-direction: column; /* 縦一列に並べる */
+  align-items: center;     /* 道路の横方向中央に揃える */
+  justify-content: space-around; /* 縦方向に等間隔で配置 */
+  height: 100%;           /* 道路の長さ一杯に伸ばす */
+  position: absolute;     /* 道路上に重ねる */
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;             /* 道路ラインより手前に表示 */
+  pointer-events: none;   /* クリックを邪魔しない */
+}
+
+/* 個々の足跡画像 */
+.p-footprint-item {
+  width: 200px;            /* 足跡の幅（道路の太さに合わせて20px〜40px等で調整） */
+  height: auto;
+  margin: 60px 0;         /* 足跡同士の上下の間隔 */
+}
+
+/* 右足・左足で交互に少し傾けたい場合の微調整（お好みで！） */
+.p-footprint-item:nth-child(even) {
+  transform: rotate(15deg) translateX(5px);  /* 右足 */
+}
+.p-footprint-item:nth-child(odd) {
+  transform: rotate(-15deg) translateX(-5px); /* 左足 */
+}
+
+/* ==========================================
+   地図とピンの重ね合わせ・絶対配置
+========================================== */
+.p-map-area__content {
+  position: relative; /* ピンを重ねるための基準点 */
+  display: inline-block;
+  max-width: 100%;
+}
+
+.p-map-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ピン共通設定 */
+.c-map-pin {
+  position: absolute;
+  width: 50px; /* ピンの表示幅（お好みで 24px〜32px などに調整） */
+  height: auto;
+  transform: translate(-50%, -100%); /* ピンの針先が位置の中心に来るよう調整 */
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.c-map-pin img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ホバー時に少し浮き上がる演出 */
+.c-map-pin:hover {
+  transform: translate(-50%, -110%) scale(1.2);
+}
+
+/* ------------------------------------------
+   各ピンの位置調整 (top / left %で位置指定)
+   見本のFigma画像を参考に配置しています
+------------------------------------------ */
+/* 左側のピン (西多摩・八王子エリア周辺) */
+.c-map-pin--1 {
+  top: 39%;
+  left: 85%;
+}
+
+/* 中央左のピン */
+.c-map-pin--2 {
+  top: 43%;
+  left: 82%;
+}
+
+/* 中央付近のピン */
+.c-map-pin--3 {
+  top: 53%;
+  left: 76%;
+}
+
+/* 中央やや右寄り */
+.c-map-pin--4 {
+  top: 69%;
+  left: 72%;
+}
+
+/* 23区寄り（上側） */
+.c-map-pin--5 {
+  top: 59%;
+  left: 69%;
+}
+
+/* 23区寄り（右下側） */
+.c-map-pin--6 {
+  top: 52%;
+  left: 71%;
+}
+
+/* ==========================================
+   トップに戻るボタン
+========================================== */
+.c-pagetop {
+  position: fixed;
+  bottom: 35px;
+  right: 35px;
+  width: 70px;
+  height: 70px;
+  background-color: #61412e; /* タイトルと同じ濃い茶色 */
+  color: #ffffff;
+  border-radius: 70%; /* 丸形 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 29px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  opacity: 0; /* 最初は隠しておく */
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease;
+}
+
+/* スクロールしたら表示されるクラス */
+.c-pagetop.is-show {
+  opacity: 0.9;
+  visibility: visible;
+}
+
+.c-pagetop:hover {
+  opacity: 1;
+  transform: translateY(-3px); /* ホバー時にふわっと浮く */
+}
+/* ==========================================
+   スクロール表示（初期状態：非表示 → 出現）
+========================================== */
+/* 画像や足跡の初期状態（画面に入る前は消しておく） */
+.p-road-item,
+.js-footprint {
+  opacity: 0;
+  transform: translateY(20px); /* 軽く下から浮き上がる演出 */
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* JSで is-show クラスが付いたら表示する */
+.p-road-item.is-show,
+.js-footprint.is-show {
+  opacity: 1;
+  transform: translateY(0);
+}
